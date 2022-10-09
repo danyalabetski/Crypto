@@ -9,6 +9,8 @@ import UIKit
 
 final class ViewController: UIViewController {
     
+    private var model = [CryptoModel]()
+    
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
     
     // MARK: - viewDidLoad
@@ -16,13 +18,27 @@ final class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.backgroundColor = UIColor(red: 20/255, green: 18/255, blue: 29/255, alpha: 1.0)
-        
         tableConfiguration()
+        getapi()
+        
+        tableView.backgroundColor = UIColor(red: 20/255, green: 18/255, blue: 29/255, alpha: 1.0)
+        tableView.backgroundColor = UIColor(named: "CustomColor")
+        
+        title = "Exchanges Rates"
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         // Add subview
         view.addSubview(tableView)
-        
+    }
+    
+    private func getapi() {
+        NetworkManager.networkManager.getAPI { apiData in
+            self.model = apiData
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     private func tableConfiguration() {
@@ -30,7 +46,8 @@ final class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
+        
+        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
         
     }
     
@@ -41,7 +58,6 @@ final class ViewController: UIViewController {
         
         tableView.frame = view.bounds
     }
-    
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -49,7 +65,7 @@ final class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return model.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,11 +73,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.setLabel(name: "greoofr", course: "dsmfodsmfo")
+        cell.setLabel(name: model[indexPath.row].asset_id, course: String(model[indexPath.row].volume_1mth_usd))
         
         return cell
     }
 
-    
-    
 }

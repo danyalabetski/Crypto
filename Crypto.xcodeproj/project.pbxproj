@@ -15,7 +15,7 @@
 		95CBB08828F2D4C000E58B34 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB08628F2D4C000E58B34 /* TableViewCell.swift */; };
 		95CBB08928F2D4C000E58B34 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CBB08728F2D4C000E58B34 /* TableViewCell.xib */; };
 		95CBB09028F2D58C00E58B34 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB08F28F2D58C00E58B34 /* Model.swift */; };
-		95CBB09328F2EF1E00E58B34 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB09228F2EF1E00E58B34 /* APIManager.swift */; };
+		95CBB09328F2EF1E00E58B34 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB09228F2EF1E00E58B34 /* NetworkManager.swift */; };
 		DDC9D642F2CCB85BFF5E5625 /* Pods_Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB559470E9FD672E0842317 /* Pods_Crypto.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 		95CBB08628F2D4C000E58B34 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		95CBB08728F2D4C000E58B34 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		95CBB08F28F2D58C00E58B34 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		95CBB09228F2EF1E00E58B34 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		95CBB09228F2EF1E00E58B34 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B883E80D55FA03EE1A33FD48 /* Pods-Crypto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto.release.xcconfig"; path = "Target Support Files/Pods-Crypto/Pods-Crypto.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +62,6 @@
 				4E600EE634FC7A21F3C0A16B /* Pods-Crypto.debug.xcconfig */,
 				B883E80D55FA03EE1A33FD48 /* Pods-Crypto.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -87,9 +86,9 @@
 		95CBB07128F2CAF300E58B34 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				95CBB08A28F2D4C500E58B34 /* Resources */,
 				95CBB09128F2EF0300E58B34 /* API */,
 				95CBB08E28F2D57F00E58B34 /* Model */,
-				95CBB08A28F2D4C500E58B34 /* Resources */,
 				95CBB08D28F2D56400E58B34 /* Controllers */,
 				95CBB08B28F2D52A00E58B34 /* Views */,
 				95CBB08028F2CAF400E58B34 /* Info.plist */,
@@ -144,7 +143,7 @@
 		95CBB09128F2EF0300E58B34 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				95CBB09228F2EF1E00E58B34 /* APIManager.swift */,
+				95CBB09228F2EF1E00E58B34 /* NetworkManager.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -264,7 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95CBB09328F2EF1E00E58B34 /* APIManager.swift in Sources */,
+				95CBB09328F2EF1E00E58B34 /* NetworkManager.swift in Sources */,
 				95CBB09028F2D58C00E58B34 /* Model.swift in Sources */,
 				95CBB07728F2CAF300E58B34 /* ViewController.swift in Sources */,
 				95CBB08828F2D4C000E58B34 /* TableViewCell.swift in Sources */,

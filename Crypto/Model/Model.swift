@@ -5,4 +5,7 @@
 //  Created by Даниэл Лабецкий on 9.10.22.
 //
 
-import Foundation
+struct CryptoModel: Codable {
+    let asset_id: String
+    let volume_1mth_usd: Float
+}
