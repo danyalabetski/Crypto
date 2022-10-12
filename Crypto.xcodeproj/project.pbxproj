@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9534248728F5A6FB008E7DCE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534248628F5A6FB008E7DCE /* Extension.swift */; };
 		9534248C28F69CFE008E7DCE /* InfoCryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534248B28F69CFE008E7DCE /* InfoCryptoViewController.swift */; };
 		95CA282A28F59B440066ADD7 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA282928F59B440066ADD7 /* CustomTableViewCell.swift */; };
 		95CBB07328F2CAF300E58B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB07228F2CAF300E58B34 /* AppDelegate.swift */; };
@@ -23,7 +22,6 @@
 /* Begin PBXFileReference section */
 		4DB559470E9FD672E0842317 /* Pods_Crypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E600EE634FC7A21F3C0A16B /* Pods-Crypto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto.debug.xcconfig"; path = "Target Support Files/Pods-Crypto/Pods-Crypto.debug.xcconfig"; sourceTree = "<group>"; };
-		9534248628F5A6FB008E7DCE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		9534248B28F69CFE008E7DCE /* InfoCryptoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCryptoViewController.swift; sourceTree = "<group>"; };
 		95CA282928F59B440066ADD7 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		95CBB06F28F2CAF300E58B34 /* Crypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,13 +65,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		9534248828F5A917008E7DCE /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Fonts;
-			sourceTree = "<group>";
-		};
 		95CBB06628F2CAF200E58B34 = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +86,6 @@
 		95CBB07128F2CAF300E58B34 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
-				9534248828F5A917008E7DCE /* Fonts */,
 				95CBB08A28F2D4C500E58B34 /* Resources */,
 				95CBB09128F2EF0300E58B34 /* API */,
 				95CBB08E28F2D57F00E58B34 /* Model */,
@@ -111,7 +101,6 @@
 			children = (
 				95CBB07228F2CAF300E58B34 /* AppDelegate.swift */,
 				95CBB07428F2CAF300E58B34 /* SceneDelegate.swift */,
-				9534248628F5A6FB008E7DCE /* Extension.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -275,7 +264,6 @@
 			files = (
 				95CBB09328F2EF1E00E58B34 /* NetworkManager.swift in Sources */,
 				95CBB09028F2D58C00E58B34 /* Model.swift in Sources */,
-				9534248728F5A6FB008E7DCE /* Extension.swift in Sources */,
 				95CBB07728F2CAF300E58B34 /* ViewController.swift in Sources */,
 				95CA282A28F59B440066ADD7 /* CustomTableViewCell.swift in Sources */,
 				9534248C28F69CFE008E7DCE /* InfoCryptoViewController.swift in Sources */,

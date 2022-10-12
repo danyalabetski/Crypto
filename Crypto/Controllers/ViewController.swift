@@ -1,17 +1,20 @@
+import NVActivityIndicatorView
 import UIKit
 
 final class ViewController: UIViewController {
 
     private var model = [CryptoModel]()
 
-    let tableView = UITableView(frame: .zero, style: .insetGrouped)
+    private let tableView = UITableView(frame: .zero, style: .insetGrouped)
+
+    private let activityIndicator = NVActivityIndicatorView(frame: .zero, type: .ballClipRotateMultiple, color: .white, padding: 0)
 
     // MARK: - viewDidLoad
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getapi()
+        getApi()
         configurationNavigationBar()
         appearanceTableConfiguration()
         behaviorTableConfiguration()
@@ -19,14 +22,25 @@ final class ViewController: UIViewController {
         // Add subview
         view.addSubview(tableView)
     }
+    
+    // MARK: - viewDidLayoutSubviews
 
-    private func getapi() {
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
+        tableView.frame = view.bounds
+    }
+
+    private func getApi() {
+        startAnimationIndicator()
         NetworkManager.networkManager.getAPI { apiData in
             self.model = apiData
 
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+
+            self.stopAnimationIndocator()
         }
     }
 
@@ -36,7 +50,7 @@ final class ViewController: UIViewController {
     }
 
     private func appearanceTableConfiguration() {
-        tableView.backgroundColor = UIColor(named: "CustomColol")
+        tableView.backgroundColor = UIColor(named: "CustomColor")
     }
 
     private func behaviorTableConfiguration() {
@@ -45,13 +59,19 @@ final class ViewController: UIViewController {
 
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.cell)
     }
+    
+    private func startAnimationIndicator() {
+        tableView.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints { make in
+            make.centerX.centerY.equalToSuperview()
+            make.width.height.equalTo(50)
+        }
+        activityIndicator.startAnimating()
+    }
 
-    // MARK: - viewDidLayoutSubviews
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        tableView.frame = view.bounds
+    private func stopAnimationIndocator() {
+        activityIndicator.stopAnimating()
+        activityIndicator.removeFromSuperview()
     }
 }
 
@@ -68,7 +88,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
 
-        cell.setLabel(name: model[indexPath.row].asset_id, course: String(model[indexPath.row].volume_1mth_usd))
+        cell.setLabel(name: model[indexPath.row].name, course: String(model[indexPath.row].volume_1mth_usd))
 
         return cell
     }
@@ -77,8 +97,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = InfoCryptoViewController()
         navigationController?.pushViewController(vc, animated: true)
-        vc.name = model[indexPath.row].asset_id
-        vc.course = String( model[indexPath.row].volume_1mth_usd)
+        vc.name = model[indexPath.row].name
+        vc.course = String(model[indexPath.row].volume_1mth_usd)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

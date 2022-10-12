@@ -4,16 +4,9 @@ import UIKit
 final class CustomTableViewCell: UITableViewCell {
 
     static let cell = "Cell"
-    
-    private let nameCryptoLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
 
-    private let courseCryptoLabel: UILabel = {
-        let label = UILabel()
-        return label
-    }()
+    private let nameCryptoLabel = UILabel()
+    private let courseCryptoLabel = UILabel()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -30,6 +23,7 @@ final class CustomTableViewCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        
         layoutLabel()
     }
 
@@ -54,9 +48,5 @@ final class CustomTableViewCell: UITableViewCell {
     func setLabel(name: String, course: String) {
         nameCryptoLabel.text = name
         courseCryptoLabel.text = "$" + course
-    }
-
-    private func appearanceLabels() {
-        nameCryptoLabel.font = UIFont(name: "Undertale_Battle_Font", size: 30)
     }
 }

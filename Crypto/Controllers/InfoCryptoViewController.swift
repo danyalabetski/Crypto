@@ -3,29 +3,22 @@ import UIKit
 
 final class InfoCryptoViewController: UIViewController {
 
-    private var nameLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .orange
-        return label
-    }()
-    
-    private var courseLabel: UILabel = {
-        let label = UILabel()
-        label.backgroundColor = .orange
-        return label
-    }()
-    
+    private var nameLabel = UILabel()
+    private var courseLabel = UILabel()
+
     var name = ""
     var course = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor(named: "CustomColor")
+
         nameLabel.text = name
-        courseLabel.text = course
-        
+        courseLabel.text = "$" + course
 
         behaviorUIElement()
+        appearanceUIElement()
     }
 
     override func viewDidLayoutSubviews() {
@@ -42,7 +35,7 @@ final class InfoCryptoViewController: UIViewController {
 
         courseLabel.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(10)
-            make.bottom.equalToSuperview().inset(100)
+            make.top.equalTo(nameLabel.snp.bottom).inset(-10)
             make.height.equalTo(100)
         }
     }
@@ -52,6 +45,13 @@ final class InfoCryptoViewController: UIViewController {
             view.addSubview($0)
             $0.layer.masksToBounds = true
             $0.layer.cornerRadius = 12
+            $0.backgroundColor = UIColor(red: 37 / 255, green: 35 / 255, blue: 51 / 255, alpha: 1.0)
         }
+    }
+    
+    private func appearanceUIElement() {
+        [nameLabel, courseLabel].forEach({
+            $0.textAlignment = .center
+        })
     }
 }
