@@ -7,6 +7,8 @@ target 'Crypto' do
 
   # Pods for Crypto
 
-pod 'Alamofire' 
+pod 'Alamofire'
+pod 'SnapKit'
+pod 'NVActivityIndicatorView'
 
 end

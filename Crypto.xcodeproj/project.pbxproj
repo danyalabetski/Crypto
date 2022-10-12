@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9534248728F5A6FB008E7DCE /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534248628F5A6FB008E7DCE /* Extension.swift */; };
+		9534248C28F69CFE008E7DCE /* InfoCryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534248B28F69CFE008E7DCE /* InfoCryptoViewController.swift */; };
+		95CA282A28F59B440066ADD7 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA282928F59B440066ADD7 /* CustomTableViewCell.swift */; };
 		95CBB07328F2CAF300E58B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB07228F2CAF300E58B34 /* AppDelegate.swift */; };
 		95CBB07528F2CAF300E58B34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB07428F2CAF300E58B34 /* SceneDelegate.swift */; };
 		95CBB07728F2CAF300E58B34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB07628F2CAF300E58B34 /* ViewController.swift */; };
 		95CBB07C28F2CAF400E58B34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95CBB07B28F2CAF400E58B34 /* Assets.xcassets */; };
 		95CBB07F28F2CAF400E58B34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CBB07D28F2CAF400E58B34 /* LaunchScreen.storyboard */; };
-		95CBB08828F2D4C000E58B34 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB08628F2D4C000E58B34 /* TableViewCell.swift */; };
-		95CBB08928F2D4C000E58B34 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 95CBB08728F2D4C000E58B34 /* TableViewCell.xib */; };
 		95CBB09028F2D58C00E58B34 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB08F28F2D58C00E58B34 /* Model.swift */; };
 		95CBB09328F2EF1E00E58B34 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB09228F2EF1E00E58B34 /* NetworkManager.swift */; };
 		DDC9D642F2CCB85BFF5E5625 /* Pods_Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB559470E9FD672E0842317 /* Pods_Crypto.framework */; };
@@ -22,6 +23,9 @@
 /* Begin PBXFileReference section */
 		4DB559470E9FD672E0842317 /* Pods_Crypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E600EE634FC7A21F3C0A16B /* Pods-Crypto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto.debug.xcconfig"; path = "Target Support Files/Pods-Crypto/Pods-Crypto.debug.xcconfig"; sourceTree = "<group>"; };
+		9534248628F5A6FB008E7DCE /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		9534248B28F69CFE008E7DCE /* InfoCryptoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCryptoViewController.swift; sourceTree = "<group>"; };
+		95CA282928F59B440066ADD7 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		95CBB06F28F2CAF300E58B34 /* Crypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CBB07228F2CAF300E58B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95CBB07428F2CAF300E58B34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,8 +33,6 @@
 		95CBB07B28F2CAF400E58B34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95CBB07E28F2CAF400E58B34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95CBB08028F2CAF400E58B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95CBB08628F2D4C000E58B34 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		95CBB08728F2D4C000E58B34 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		95CBB08F28F2D58C00E58B34 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		95CBB09228F2EF1E00E58B34 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		B883E80D55FA03EE1A33FD48 /* Pods-Crypto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto.release.xcconfig"; path = "Target Support Files/Pods-Crypto/Pods-Crypto.release.xcconfig"; sourceTree = "<group>"; };
@@ -65,6 +67,13 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9534248828F5A917008E7DCE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		95CBB06628F2CAF200E58B34 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +95,7 @@
 		95CBB07128F2CAF300E58B34 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				9534248828F5A917008E7DCE /* Fonts */,
 				95CBB08A28F2D4C500E58B34 /* Resources */,
 				95CBB09128F2EF0300E58B34 /* API */,
 				95CBB08E28F2D57F00E58B34 /* Model */,
@@ -101,6 +111,7 @@
 			children = (
 				95CBB07228F2CAF300E58B34 /* AppDelegate.swift */,
 				95CBB07428F2CAF300E58B34 /* SceneDelegate.swift */,
+				9534248628F5A6FB008E7DCE /* Extension.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -126,8 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				95CBB07628F2CAF300E58B34 /* ViewController.swift */,
-				95CBB08628F2D4C000E58B34 /* TableViewCell.swift */,
-				95CBB08728F2D4C000E58B34 /* TableViewCell.xib */,
+				9534248B28F69CFE008E7DCE /* InfoCryptoViewController.swift */,
+				95CA282928F59B440066ADD7 /* CustomTableViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -209,7 +220,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				95CBB07F28F2CAF400E58B34 /* LaunchScreen.storyboard in Resources */,
-				95CBB08928F2D4C000E58B34 /* TableViewCell.xib in Resources */,
 				95CBB07C28F2CAF400E58B34 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,8 +275,10 @@
 			files = (
 				95CBB09328F2EF1E00E58B34 /* NetworkManager.swift in Sources */,
 				95CBB09028F2D58C00E58B34 /* Model.swift in Sources */,
+				9534248728F5A6FB008E7DCE /* Extension.swift in Sources */,
 				95CBB07728F2CAF300E58B34 /* ViewController.swift in Sources */,
-				95CBB08828F2D4C000E58B34 /* TableViewCell.swift in Sources */,
+				95CA282A28F59B440066ADD7 /* CustomTableViewCell.swift in Sources */,
+				9534248C28F69CFE008E7DCE /* InfoCryptoViewController.swift in Sources */,
 				95CBB07328F2CAF300E58B34 /* AppDelegate.swift in Sources */,
 				95CBB07528F2CAF300E58B34 /* SceneDelegate.swift in Sources */,
 			);
