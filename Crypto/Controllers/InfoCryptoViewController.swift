@@ -8,7 +8,7 @@ final class InfoCryptoViewController: UIViewController {
 
     var name = ""
     var course = ""
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

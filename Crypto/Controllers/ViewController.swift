@@ -63,7 +63,8 @@ final class ViewController: UIViewController {
     private func startAnimationIndicator() {
         tableView.addSubview(activityIndicator)
         activityIndicator.snp.makeConstraints { make in
-            make.centerX.centerY.equalToSuperview()
+            make.centerX.equalTo(view.center.x)
+            make.centerY.equalTo(view.center.y - 100)
             make.width.height.equalTo(50)
         }
         activityIndicator.startAnimating()
