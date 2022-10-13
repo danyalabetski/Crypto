@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9534248C28F69CFE008E7DCE /* InfoCryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534248B28F69CFE008E7DCE /* InfoCryptoViewController.swift */; };
 		9534248E28F81878008E7DCE /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534248D28F81878008E7DCE /* SplashScreen.swift */; };
+		9534249328F89E86008E7DCE /* ConvertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534249228F89E86008E7DCE /* ConvertModel.swift */; };
 		95CA282A28F59B440066ADD7 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA282928F59B440066ADD7 /* CustomTableViewCell.swift */; };
 		95CBB07328F2CAF300E58B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB07228F2CAF300E58B34 /* AppDelegate.swift */; };
 		95CBB07528F2CAF300E58B34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB07428F2CAF300E58B34 /* SceneDelegate.swift */; };
@@ -25,6 +26,7 @@
 		4E600EE634FC7A21F3C0A16B /* Pods-Crypto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto.debug.xcconfig"; path = "Target Support Files/Pods-Crypto/Pods-Crypto.debug.xcconfig"; sourceTree = "<group>"; };
 		9534248B28F69CFE008E7DCE /* InfoCryptoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCryptoViewController.swift; sourceTree = "<group>"; };
 		9534248D28F81878008E7DCE /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		9534249228F89E86008E7DCE /* ConvertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertModel.swift; sourceTree = "<group>"; };
 		95CA282928F59B440066ADD7 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		95CBB06F28F2CAF300E58B34 /* Crypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CBB07228F2CAF300E58B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				95CBB08F28F2D58C00E58B34 /* Model.swift */,
+				9534249228F89E86008E7DCE /* ConvertModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				95CBB09328F2EF1E00E58B34 /* NetworkManager.swift in Sources */,
 				95CBB09028F2D58C00E58B34 /* Model.swift in Sources */,
 				95CBB07728F2CAF300E58B34 /* ViewController.swift in Sources */,
+				9534249328F89E86008E7DCE /* ConvertModel.swift in Sources */,
 				95CA282A28F59B440066ADD7 /* CustomTableViewCell.swift in Sources */,
 				9534248C28F69CFE008E7DCE /* InfoCryptoViewController.swift in Sources */,
 				95CBB07328F2CAF300E58B34 /* AppDelegate.swift in Sources */,

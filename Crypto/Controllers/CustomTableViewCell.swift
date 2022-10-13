@@ -24,7 +24,7 @@ final class CustomTableViewCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+
         layoutLabel()
     }
 
@@ -50,7 +50,7 @@ final class CustomTableViewCell: UITableViewCell {
         nameCryptoLabel.text = name
         courseCryptoLabel.text = "$" + course
     }
-    
+
     func appearanceLabel() {
         nameCryptoLabel.font = UIFont.boldSystemFont(ofSize: 18)
     }

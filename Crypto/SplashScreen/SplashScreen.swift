@@ -45,17 +45,17 @@ final class SplashScreen: UIViewController {
                                           width: size,
                                           height: size)
         }
-        
+
         UIView.animate(withDuration: 1.5, animations: {
             self.imageIcon.alpha = 0
         }, completion: { done in
             if done {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                     let viewController = ViewController()
                     viewController.modalTransitionStyle = .crossDissolve
                     viewController.modalPresentationStyle = .fullScreen
-                    self.present(viewController, animated: true)
-                })
+                    self.navigationController?.pushViewController(viewController, animated: false)
+                }
             }
         })
     }

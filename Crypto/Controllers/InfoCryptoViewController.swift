@@ -8,10 +8,10 @@ final class InfoCryptoViewController: UIViewController {
 
     var name = ""
     var course = ""
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         view.backgroundColor = UIColor(named: "CustomColor")
 
         nameLabel.text = name
@@ -48,10 +48,10 @@ final class InfoCryptoViewController: UIViewController {
             $0.backgroundColor = UIColor(red: 37 / 255, green: 35 / 255, blue: 51 / 255, alpha: 1.0)
         }
     }
-    
+
     private func appearanceUIElement() {
-        [nameLabel, courseLabel].forEach({
+        [nameLabel, courseLabel].forEach {
             $0.textAlignment = .center
-        })
+        }
     }
 }

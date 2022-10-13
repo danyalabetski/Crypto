@@ -3,11 +3,15 @@ import UIKit
 
 final class ViewController: UIViewController {
 
-    private var model = [CryptoModel]()
+    var model = [CustomCryptoModel]()
+
+    private var searchController = UISearchController()
 
     private let tableView = UITableView(frame: .zero, style: .insetGrouped)
 
     private let activityIndicator = NVActivityIndicatorView(frame: .zero, type: .ballClipRotateMultiple, color: .white, padding: 0)
+
+    private var currencyFilterArray: [CustomCryptoModel] = []
 
     // MARK: - viewDidLoad
 
@@ -18,11 +22,12 @@ final class ViewController: UIViewController {
         configurationNavigationBar()
         appearanceTableConfiguration()
         behaviorTableConfiguration()
+        configurationSearchController()
 
         // Add subview
         view.addSubview(tableView)
     }
-    
+
     // MARK: - viewDidLayoutSubviews
 
     override func viewDidLayoutSubviews() {
@@ -59,7 +64,7 @@ final class ViewController: UIViewController {
 
         tableView.register(CustomTableViewCell.self, forCellReuseIdentifier: CustomTableViewCell.cell)
     }
-    
+
     private func startAnimationIndicator() {
         tableView.addSubview(activityIndicator)
         activityIndicator.snp.makeConstraints { make in
@@ -74,6 +79,14 @@ final class ViewController: UIViewController {
         activityIndicator.stopAnimating()
         activityIndicator.removeFromSuperview()
     }
+
+    private func configurationSearchController() {
+        searchController = UISearchController(searchResultsController: nil)
+        navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Search currency..."
+        searchController.searchBar.barTintColor = UIColor(red: 0.898, green: 0.898, blue: 0.898, alpha: 1)
+    }
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -81,15 +94,20 @@ final class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        model.count
+        if searchController.isActive {
+            return currencyFilterArray.count
+        } else {
+            return model.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.cell, for: indexPath) as? CustomTableViewCell else {
             return UITableViewCell()
         }
-
-        cell.setLabel(name: model[indexPath.row].name, course: String(model[indexPath.row].volume_1mth_usd))
+        
+        let currency = (searchController.isActive) ? currencyFilterArray[indexPath.row] : model[indexPath.row]
+        cell.setLabel(name: currency.name ?? "None", course: String(format: "%.3f", currency.volume1mthUsd ?? "0"))
 
         return cell
     }
@@ -98,11 +116,30 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = InfoCryptoViewController()
         navigationController?.pushViewController(vc, animated: true)
-        vc.name = model[indexPath.row].name
-        vc.course = String(model[indexPath.row].volume_1mth_usd)
+        let currency = (searchController.isActive) ? currencyFilterArray[indexPath.row] : model[indexPath.row]
+        vc.name = currency.name ?? "none"
+        vc.course = String(format: "%.3f", currency.volume1mthUsd ?? "0")
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         50
+    }
+}
+
+extension ViewController: UISearchResultsUpdating {
+    private func searchCurrencyFilterArray(for searchText: String) {
+        currencyFilterArray = model.filter { coins -> Bool in
+            if let name = coins.assetId?.lowercased() {
+                return name.hasPrefix(searchText.lowercased())
+            }
+            return false
+        }
+    }
+
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            searchCurrencyFilterArray(for: searchText)
+            tableView.reloadData()
+        }
     }
 }
