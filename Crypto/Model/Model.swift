@@ -6,4 +6,5 @@ struct CryptoModel: Codable {
     let volume_1day_usd: Double?
     let volume_1hrs_usd: Double?
     let volume_1mth_usd: Double?
+    let price_usd: Double?
 }

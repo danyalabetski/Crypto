@@ -105,9 +105,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CustomTableViewCell.cell, for: indexPath) as? CustomTableViewCell else {
             return UITableViewCell()
         }
-        
+
         let currency = (searchController.isActive) ? currencyFilterArray[indexPath.row] : model[indexPath.row]
-        cell.setLabel(name: currency.name ?? "None", course: String(format: "%.3f", currency.volume1mthUsd ?? "0"))
+        cell.setLabel(name: currency.name ?? "None", course: String(format: "%.3f", currency.priceUsd ?? "0"))
 
         return cell
     }
@@ -118,7 +118,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         navigationController?.pushViewController(vc, animated: true)
         let currency = (searchController.isActive) ? currencyFilterArray[indexPath.row] : model[indexPath.row]
         vc.name = currency.name ?? "none"
-        vc.course = String(format: "%.3f", currency.volume1mthUsd ?? "0")
+        vc.course = String(format: "%.3f", currency.priceUsd ?? "0")
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
