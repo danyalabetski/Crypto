@@ -53,5 +53,6 @@ final class CustomTableViewCell: UITableViewCell {
 
     func appearanceLabel() {
         nameCryptoLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        courseCryptoLabel.textColor = .systemGreen
     }
 }

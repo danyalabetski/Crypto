@@ -53,5 +53,7 @@ final class InfoCryptoViewController: UIViewController {
         [nameLabel, courseLabel].forEach {
             $0.textAlignment = .center
         }
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        courseLabel.textColor = .systemGreen
     }
 }

@@ -38,14 +38,14 @@ final class ViewController: UIViewController {
 
     private func getApi() {
         startAnimationIndicator()
-        NetworkManager.networkManager.getAPI { apiData in
-            self.model = apiData
+        NetworkManager.networkManager.getAPI { [weak self] apiData in
+            self?.model = apiData
 
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                self?.tableView.reloadData()
             }
 
-            self.stopAnimationIndocator()
+            self?.stopAnimationIndocator()
         }
     }
 
@@ -122,7 +122,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        50
+        70
     }
 }
 
