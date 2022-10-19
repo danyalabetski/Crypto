@@ -1,9 +1,10 @@
+import Alamofire
 import NVActivityIndicatorView
 import UIKit
 
 final class ViewController: UIViewController {
-
-    var model = [CustomCryptoModel]()
+    
+    private var customCryptoModel = [CustomCryptoModel]()
 
     private var searchController = UISearchController()
 
@@ -12,12 +13,15 @@ final class ViewController: UIViewController {
     private let activityIndicator = NVActivityIndicatorView(frame: .zero, type: .ballClipRotateMultiple, color: .white, padding: 0)
 
     private var currencyFilterArray: [CustomCryptoModel] = []
+    
+    private var icons: [IconModel] = []
 
     // MARK: - viewDidLoad
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        getAllIcons()
         getApi()
         configurationNavigationBar()
         appearanceTableConfiguration()
@@ -36,10 +40,20 @@ final class ViewController: UIViewController {
         tableView.frame = view.bounds
     }
 
+    func getAllIcons() {
+        NetworkManager.networkManager.getApiImages { [weak self] apiData in
+            self?.icons = apiData
+
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+    }
+
     private func getApi() {
         startAnimationIndicator()
         NetworkManager.networkManager.getAPI { [weak self] apiData in
-            self?.model = apiData
+            self?.customCryptoModel = apiData
 
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
@@ -97,7 +111,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if searchController.isActive {
             return currencyFilterArray.count
         } else {
-            return model.count
+            return customCryptoModel.count
         }
     }
 
@@ -106,8 +120,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
 
-        let currency = (searchController.isActive) ? currencyFilterArray[indexPath.row] : model[indexPath.row]
-        cell.setLabel(name: currency.name ?? "None", course: String(format: "%.3f", currency.priceUsd ?? "0"))
+        let currency = (searchController.isActive) ? currencyFilterArray[indexPath.row] : customCryptoModel[indexPath.row]
+
+        cell.setLabel(name: currency.name ?? "None", course: String(format: "%.3f", currency.priceUsd ?? "0"), icons: icons[indexPath.row])
 
         return cell
     }
@@ -115,10 +130,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = InfoCryptoViewController()
-        navigationController?.pushViewController(vc, animated: true)
-        let currency = (searchController.isActive) ? currencyFilterArray[indexPath.row] : model[indexPath.row]
+        let currency = (searchController.isActive) ? currencyFilterArray[indexPath.row] : customCryptoModel[indexPath.row]
+
         vc.name = currency.name ?? "none"
         vc.course = String(format: "%.3f", currency.priceUsd ?? "0")
+        vc.assetId = vc.cryptoModel?.asset_id ?? "none"
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -128,7 +146,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ViewController: UISearchResultsUpdating {
     private func searchCurrencyFilterArray(for searchText: String) {
-        currencyFilterArray = model.filter { coins -> Bool in
+        currencyFilterArray = customCryptoModel.filter { coins -> Bool in
             if let name = coins.assetId?.lowercased() {
                 return name.hasPrefix(searchText.lowercased())
             }

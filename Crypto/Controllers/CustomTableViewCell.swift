@@ -7,6 +7,7 @@ final class CustomTableViewCell: UITableViewCell {
 
     private let nameCryptoLabel = UILabel()
     private let courseCryptoLabel = UILabel()
+    private let iconImageView = UIImageView()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -31,28 +32,38 @@ final class CustomTableViewCell: UITableViewCell {
     private func layoutLabel() {
 
         nameCryptoLabel.snp.makeConstraints { make in
-            make.left.top.bottom.equalToSuperview().inset(5)
+            make.top.bottom.equalToSuperview().inset(5)
+            make.left.equalTo(iconImageView.snp.right).inset(-5)
         }
 
         courseCryptoLabel.snp.makeConstraints { make in
             make.right.bottom.top.equalToSuperview().inset(5)
         }
+        
+        iconImageView.snp.makeConstraints { make in
+            make.left.top.bottom.equalToSuperview().inset(5)
+            make.width.height.equalTo(60)
+        }
     }
 
     private func behaviorTableViewCell() {
-        [nameCryptoLabel, courseCryptoLabel].forEach {
+        [nameCryptoLabel, courseCryptoLabel, iconImageView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             addSubview($0)
         }
     }
 
-    func setLabel(name: String, course: String) {
+    func setLabel(name: String, course: String, icons: IconModel) {
         nameCryptoLabel.text = name
         courseCryptoLabel.text = "$" + course
+        self.iconImageView.setImage(imageUrl: icons.url)
     }
 
     func appearanceLabel() {
-        nameCryptoLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        nameCryptoLabel.font = .systemFont(ofSize: 20, weight: .medium)
         courseCryptoLabel.textColor = .systemGreen
+        courseCryptoLabel.textAlignment = .right
+        courseCryptoLabel.font = .systemFont(ofSize: 18, weight: .semibold)
+        iconImageView.contentMode = .scaleAspectFit
     }
 }

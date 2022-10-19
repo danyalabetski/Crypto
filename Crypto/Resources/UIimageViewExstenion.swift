@@ -1,8 +1,10 @@
-//
-//  UIimageViewExstenion.swift
-//  Crypto
-//
-//  Created by Даниэл Лабецкий on 19.10.22.
-//
-
 import Foundation
+import UIKit
+import Kingfisher
+
+extension UIImageView {
+    
+    func setImage(imageUrl: String) {
+        self.kf.setImage(with: URL(string: imageUrl))
+    }
+}

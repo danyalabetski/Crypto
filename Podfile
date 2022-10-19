@@ -10,5 +10,6 @@ target 'Crypto' do
 pod 'Alamofire'
 pod 'SnapKit'
 pod 'NVActivityIndicatorView'
+pod 'Kingfisher'
 
 end
