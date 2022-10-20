@@ -21,6 +21,9 @@ Cocoapods
 ```sh
 SnapKit
 ```
+```sh
+Kingfisher
+```
 ### __Installation__
 
 #### CocoaPods
