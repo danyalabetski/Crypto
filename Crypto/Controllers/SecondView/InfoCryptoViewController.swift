@@ -3,8 +3,6 @@ import UIKit
 
 final class InfoCryptoViewController: UIViewController {
 
-    var cryptoModel: CryptoModel?
-
     private var nameLabel = UILabel()
     private var courseLabel = UILabel()
     private let assetIdLabel = UILabel()
@@ -25,19 +23,15 @@ final class InfoCryptoViewController: UIViewController {
 
         behaviorUIElement()
         appearanceUIElement()
-        getCryptoData()
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         configurationLayout()
     }
-
-    private func getCryptoData() {
-
-        APICaller.shared.getAllCryptoData { [weak self] apiData in
-            self?.cryptoModel = apiData
-        }
+    
+    func setupImage(image: IconModel) {
+        self.cryptoImageView.setImage(imageUrl: image.url)
     }
 
     private func configurationLayout() {
@@ -60,28 +54,31 @@ final class InfoCryptoViewController: UIViewController {
         }
 
         cryptoImageView.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(10)
+//            make.left.right.equalToSuperview().inset(10)
             make.top.equalTo(assetIdLabel.snp.bottom).inset(-10)
-            make.height.width.equalTo(100)
+//            make.bottom.equalTo(20)
+            make.height.width.equalTo(250)
         }
     }
 
     private func behaviorUIElement() {
-        [nameLabel, courseLabel, assetIdLabel, cryptoImageView].forEach {
+        [nameLabel, courseLabel, assetIdLabel].forEach {
             view.addSubview($0)
             $0.layer.masksToBounds = true
             $0.layer.cornerRadius = 12
             $0.backgroundColor = UIColor(red: 37 / 255, green: 35 / 255, blue: 51 / 255, alpha: 1.0)
         }
+        view.addSubview(cryptoImageView)
     }
 
     private func appearanceUIElement() {
         [nameLabel, courseLabel, assetIdLabel].forEach {
             $0.textAlignment = .center
         }
-        
-        nameLabel.font = UIFont.boldSystemFont(ofSize: 18)
+        nameLabel.font = .systemFont(ofSize: 20, weight: .medium)
+        assetIdLabel.font = .systemFont(ofSize: 20, weight: .medium)
         courseLabel.textColor = .systemGreen
-        
+        courseLabel.font = .systemFont(ofSize: 18, weight: .semibold)
+        cryptoImageView.contentMode = .scaleAspectFit
     }
 }

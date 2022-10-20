@@ -5,7 +5,7 @@ final class NetworkManager {
     static let networkManager = NetworkManager()
     
     private var icons: [IconModel] = []
-
+    
     private enum Constants {
         static let baseURL = "https://rest.coinapi.io/v1"
     }

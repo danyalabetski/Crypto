@@ -3,8 +3,10 @@ import NVActivityIndicatorView
 import UIKit
 
 final class ViewController: UIViewController {
-    
+
     private var customCryptoModel = [CustomCryptoModel]()
+
+    private var cryptoModel = [CryptoModel]()
 
     private var searchController = UISearchController()
 
@@ -13,14 +15,15 @@ final class ViewController: UIViewController {
     private let activityIndicator = NVActivityIndicatorView(frame: .zero, type: .ballClipRotateMultiple, color: .white, padding: 0)
 
     private var currencyFilterArray: [CustomCryptoModel] = []
-    
-    private var icons: [IconModel] = []
 
+    private var icons: [IconModel] = []
+    
     // MARK: - viewDidLoad
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        getCryptoData()
         getAllIcons()
         getApi()
         configurationNavigationBar()
@@ -40,7 +43,17 @@ final class ViewController: UIViewController {
         tableView.frame = view.bounds
     }
 
-    func getAllIcons() {
+    private func getCryptoData() {
+        APICaller.shared.getAllCryptoData { [weak self] apiData in
+            self?.cryptoModel = apiData
+
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+    }
+
+    private func getAllIcons() {
         NetworkManager.networkManager.getApiImages { [weak self] apiData in
             self?.icons = apiData
 
@@ -123,7 +136,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let currency = (searchController.isActive) ? currencyFilterArray[indexPath.row] : customCryptoModel[indexPath.row]
 
         cell.setLabel(name: currency.name ?? "None", course: String(format: "%.3f", currency.priceUsd ?? "0"), icons: icons[indexPath.row])
-
+        
         return cell
     }
 
@@ -133,9 +146,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let currency = (searchController.isActive) ? currencyFilterArray[indexPath.row] : customCryptoModel[indexPath.row]
 
         vc.name = currency.name ?? "none"
-        vc.course = String(format: "%.3f", currency.priceUsd ?? "0")
-        vc.assetId = vc.cryptoModel?.asset_id ?? "none"
-        
+        vc.course = String(format: "%.3f", cryptoModel[indexPath.row].price_usd ?? "0")
+        vc.assetId = cryptoModel[indexPath.row].asset_id
+        vc.setupImage(image: icons[indexPath.row])
+
         navigationController?.pushViewController(vc, animated: true)
     }
 
