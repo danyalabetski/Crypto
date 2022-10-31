@@ -8,10 +8,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
-        let navigationController = UINavigationController(rootViewController: SplashScreen())
-        window.rootViewController = navigationController
+        let initialNavigationController = UINavigationController()
+        window.rootViewController = initialNavigationController
         window.makeKeyAndVisible()
         self.window = window
+        
+        let _ = CryptoTrackerRouter(navigationController: initialNavigationController)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

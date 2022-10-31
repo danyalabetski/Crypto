@@ -3,16 +3,26 @@ import UIKit
 
 final class CustomTableViewCell: UITableViewCell {
 
+    // MARK: - Properties
+
     static let cell = "Cell"
+
+    // MARK: Public
+
+    var cellDidTappedHandler: (() -> Void)?
+
+    // MARK: Private
 
     private let nameCryptoLabel = UILabel()
     private let courseCryptoLabel = UILabel()
     private let iconImageView = UIImageView()
 
+    // MARK: - Lifecycle
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
-        backgroundColor = UIColor(red: 37 / 255, green: 35 / 255, blue: 51 / 255, alpha: 1.0)
+        backgroundColor = UIColor(named: "CustomColor")
 
         behaviorTableViewCell()
         appearanceLabel()
@@ -29,6 +39,8 @@ final class CustomTableViewCell: UITableViewCell {
         layoutLabel()
     }
 
+    // MARK: - Setups
+
     private func layoutLabel() {
 
         nameCryptoLabel.snp.makeConstraints { make in
@@ -39,7 +51,7 @@ final class CustomTableViewCell: UITableViewCell {
         courseCryptoLabel.snp.makeConstraints { make in
             make.right.bottom.top.equalToSuperview().inset(5)
         }
-        
+
         iconImageView.snp.makeConstraints { make in
             make.left.top.bottom.equalToSuperview().inset(5)
             make.width.height.equalTo(60)
@@ -47,16 +59,20 @@ final class CustomTableViewCell: UITableViewCell {
     }
 
     private func behaviorTableViewCell() {
-        [nameCryptoLabel, courseCryptoLabel, iconImageView].forEach {
-            $0.translatesAutoresizingMaskIntoConstraints = false
-            addSubview($0)
-        }
+
+        addViews(view: nameCryptoLabel, courseCryptoLabel, iconImageView)
+        noneMaskIntoConstraints(view: nameCryptoLabel, courseCryptoLabel, iconImageView)
+
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTappedGestureRecognizer))
+        addGestureRecognizer(gestureRecognizer)
     }
 
-    func setLabel(name: String, course: String, icons: IconModel) {
+    func setLabel(name: String, course: Double?) {
         nameCryptoLabel.text = name
-        courseCryptoLabel.text = "$" + course
-        self.iconImageView.setImage(imageUrl: icons.url)
+
+        let formattedPrice = course != nil ? String(format: "%.2f", course!) : "-"
+        courseCryptoLabel.text = "$" + formattedPrice
+//        iconImageView.setImage(imageUrl: icons.url)
     }
 
     func appearanceLabel() {
@@ -65,5 +81,11 @@ final class CustomTableViewCell: UITableViewCell {
         courseCryptoLabel.textAlignment = .right
         courseCryptoLabel.font = .systemFont(ofSize: 18, weight: .semibold)
         iconImageView.contentMode = .scaleAspectFit
+    }
+
+    // MARK: - Helpers
+
+    @objc private func didTappedGestureRecognizer() {
+        cellDidTappedHandler?()
     }
 }

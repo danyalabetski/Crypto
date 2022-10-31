@@ -8,18 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		9534248C28F69CFE008E7DCE /* InfoCryptoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534248B28F69CFE008E7DCE /* InfoCryptoViewController.swift */; };
-		9534248E28F81878008E7DCE /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534248D28F81878008E7DCE /* SplashScreen.swift */; };
-		9534249328F89E86008E7DCE /* ConvertModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9534249228F89E86008E7DCE /* ConvertModel.swift */; };
-		958B9D882900537200B42D7B /* UIimageViewExstenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B9D872900537200B42D7B /* UIimageViewExstenion.swift */; };
-		958B9D8A29008E6B00B42D7B /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958B9D8929008E6B00B42D7B /* APICaller.swift */; };
-		95CA282A28F59B440066ADD7 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA282928F59B440066ADD7 /* CustomTableViewCell.swift */; };
+		95999833290FABA200928A53 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95999832290FABA200928A53 /* UIView+Extension.swift */; };
+		95999838290FC17A00928A53 /* InfoCryptoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95999837290FC17A00928A53 /* InfoCryptoPresenter.swift */; };
+		9599983A290FC18500928A53 /* InfoCryptoRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95999839290FC18500928A53 /* InfoCryptoRouter.swift */; };
+		95CA282A28F59B440066ADD7 /* CryptoTrackerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CA282928F59B440066ADD7 /* CryptoTrackerCell.swift */; };
 		95CBB07328F2CAF300E58B34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB07228F2CAF300E58B34 /* AppDelegate.swift */; };
 		95CBB07528F2CAF300E58B34 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB07428F2CAF300E58B34 /* SceneDelegate.swift */; };
-		95CBB07728F2CAF300E58B34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB07628F2CAF300E58B34 /* ViewController.swift */; };
+		95CBB07728F2CAF300E58B34 /* CryptoTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB07628F2CAF300E58B34 /* CryptoTrackerView.swift */; };
 		95CBB07C28F2CAF400E58B34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95CBB07B28F2CAF400E58B34 /* Assets.xcassets */; };
 		95CBB07F28F2CAF400E58B34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95CBB07D28F2CAF400E58B34 /* LaunchScreen.storyboard */; };
 		95CBB09028F2D58C00E58B34 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB08F28F2D58C00E58B34 /* Model.swift */; };
 		95CBB09328F2EF1E00E58B34 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CBB09228F2EF1E00E58B34 /* NetworkManager.swift */; };
+		95D09654290F9CCD002A8CFA /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D09653290F9CCD002A8CFA /* Collection+Extension.swift */; };
+		95E2CF4B290BB6A10048D2B5 /* CryptoTrackerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E2CF4A290BB6A10048D2B5 /* CryptoTrackerPresenter.swift */; };
+		95E2CF4D290D2EE50048D2B5 /* CryptoTrackerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E2CF4C290D2EE50048D2B5 /* CryptoTrackerRouter.swift */; };
 		DDC9D642F2CCB85BFF5E5625 /* Pods_Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB559470E9FD672E0842317 /* Pods_Crypto.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,20 +29,22 @@
 		4DB559470E9FD672E0842317 /* Pods_Crypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E600EE634FC7A21F3C0A16B /* Pods-Crypto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto.debug.xcconfig"; path = "Target Support Files/Pods-Crypto/Pods-Crypto.debug.xcconfig"; sourceTree = "<group>"; };
 		9534248B28F69CFE008E7DCE /* InfoCryptoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCryptoViewController.swift; sourceTree = "<group>"; };
-		9534248D28F81878008E7DCE /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
-		9534249228F89E86008E7DCE /* ConvertModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertModel.swift; sourceTree = "<group>"; };
-		958B9D872900537200B42D7B /* UIimageViewExstenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIimageViewExstenion.swift; sourceTree = "<group>"; };
-		958B9D8929008E6B00B42D7B /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
-		95CA282928F59B440066ADD7 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		95999832290FABA200928A53 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		95999837290FC17A00928A53 /* InfoCryptoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCryptoPresenter.swift; sourceTree = "<group>"; };
+		95999839290FC18500928A53 /* InfoCryptoRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoCryptoRouter.swift; sourceTree = "<group>"; };
+		95CA282928F59B440066ADD7 /* CryptoTrackerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerCell.swift; sourceTree = "<group>"; };
 		95CBB06F28F2CAF300E58B34 /* Crypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95CBB07228F2CAF300E58B34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95CBB07428F2CAF300E58B34 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		95CBB07628F2CAF300E58B34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		95CBB07628F2CAF300E58B34 /* CryptoTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerView.swift; sourceTree = "<group>"; };
 		95CBB07B28F2CAF400E58B34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95CBB07E28F2CAF400E58B34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95CBB08028F2CAF400E58B34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95CBB08F28F2D58C00E58B34 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		95CBB09228F2EF1E00E58B34 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		95D09653290F9CCD002A8CFA /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		95E2CF4A290BB6A10048D2B5 /* CryptoTrackerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerPresenter.swift; sourceTree = "<group>"; };
+		95E2CF4C290D2EE50048D2B5 /* CryptoTrackerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerRouter.swift; sourceTree = "<group>"; };
 		B883E80D55FA03EE1A33FD48 /* Pods-Crypto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto.release.xcconfig"; path = "Target Support Files/Pods-Crypto/Pods-Crypto.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -73,26 +77,55 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		9534249128F81ED2008E7DCE /* SplashScreen */ = {
-			isa = PBXGroup;
-			children = (
-				9534248D28F81878008E7DCE /* SplashScreen.swift */,
-			);
-			path = SplashScreen;
-			sourceTree = "<group>";
-		};
 		958B9D8228FF471E00B42D7B /* SecondView */ = {
 			isa = PBXGroup;
 			children = (
 				9534248B28F69CFE008E7DCE /* InfoCryptoViewController.swift */,
+				95999837290FC17A00928A53 /* InfoCryptoPresenter.swift */,
+				95999839290FC18500928A53 /* InfoCryptoRouter.swift */,
 			);
 			path = SecondView;
+			sourceTree = "<group>";
+		};
+		95999834290FABC800928A53 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				95CBB07228F2CAF300E58B34 /* AppDelegate.swift */,
+				95CBB07428F2CAF300E58B34 /* SceneDelegate.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		95999835290FABD300928A53 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				95999836290FABE300928A53 /* Extensions */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		95999836290FABE300928A53 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				95D09653290F9CCD002A8CFA /* Collection+Extension.swift */,
+				95999832290FABA200928A53 /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		959D438B290DDAF8002FA448 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				95CBB09228F2EF1E00E58B34 /* NetworkManager.swift */,
+			);
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 		95CBB06628F2CAF200E58B34 = {
 			isa = PBXGroup;
 			children = (
 				95CBB07128F2CAF300E58B34 /* Crypto */,
+				95CBB08B28F2D52A00E58B34 /* Views */,
 				95CBB07028F2CAF300E58B34 /* Products */,
 				3F9D1021E825D62EBB6FE70B /* Pods */,
 				228ECF59C56FD6918A4CEAA3 /* Frameworks */,
@@ -110,25 +143,14 @@
 		95CBB07128F2CAF300E58B34 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
-				95CBB08E28F2D57F00E58B34 /* Model */,
-				95CBB08B28F2D52A00E58B34 /* Views */,
-				95CBB08D28F2D56400E58B34 /* Controllers */,
-				95CBB09128F2EF0300E58B34 /* API */,
-				9534249128F81ED2008E7DCE /* SplashScreen */,
-				95CBB08A28F2D4C500E58B34 /* Resources */,
+				95999835290FABD300928A53 /* Helper */,
+				95999834290FABC800928A53 /* System */,
+				959D438B290DDAF8002FA448 /* NetworkLayer */,
+				95E2CF46290BB4FD0048D2B5 /* ModuleTwo */,
+				95E2CF47290BB5760048D2B5 /* ModuleOne */,
 				95CBB08028F2CAF400E58B34 /* Info.plist */,
 			);
 			path = Crypto;
-			sourceTree = "<group>";
-		};
-		95CBB08A28F2D4C500E58B34 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				95CBB07228F2CAF300E58B34 /* AppDelegate.swift */,
-				95CBB07428F2CAF300E58B34 /* SceneDelegate.swift */,
-				958B9D872900537200B42D7B /* UIimageViewExstenion.swift */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		95CBB08B28F2D52A00E58B34 /* Views */ = {
@@ -148,32 +170,56 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		95CBB08D28F2D56400E58B34 /* Controllers */ = {
+		95CBB08D28F2D56400E58B34 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				95CBB07628F2CAF300E58B34 /* ViewController.swift */,
-				95CA282928F59B440066ADD7 /* CustomTableViewCell.swift */,
-				958B9D8228FF471E00B42D7B /* SecondView */,
+				95CBB07628F2CAF300E58B34 /* CryptoTrackerView.swift */,
+				95CA282928F59B440066ADD7 /* CryptoTrackerCell.swift */,
 			);
-			path = Controllers;
+			path = View;
 			sourceTree = "<group>";
 		};
 		95CBB08E28F2D57F00E58B34 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				95CBB08F28F2D58C00E58B34 /* Model.swift */,
-				9534249228F89E86008E7DCE /* ConvertModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		95CBB09128F2EF0300E58B34 /* API */ = {
+		95E2CF46290BB4FD0048D2B5 /* ModuleTwo */ = {
 			isa = PBXGroup;
 			children = (
-				95CBB09228F2EF1E00E58B34 /* NetworkManager.swift */,
-				958B9D8929008E6B00B42D7B /* APICaller.swift */,
+				958B9D8228FF471E00B42D7B /* SecondView */,
 			);
-			path = API;
+			path = ModuleTwo;
+			sourceTree = "<group>";
+		};
+		95E2CF47290BB5760048D2B5 /* ModuleOne */ = {
+			isa = PBXGroup;
+			children = (
+				95CBB08E28F2D57F00E58B34 /* Model */,
+				95CBB08D28F2D56400E58B34 /* View */,
+				95E2CF48290BB5950048D2B5 /* Presenter */,
+				95E2CF49290BB5C20048D2B5 /* Router */,
+			);
+			path = ModuleOne;
+			sourceTree = "<group>";
+		};
+		95E2CF48290BB5950048D2B5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				95E2CF4A290BB6A10048D2B5 /* CryptoTrackerPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		95E2CF49290BB5C20048D2B5 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				95E2CF4C290D2EE50048D2B5 /* CryptoTrackerRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,15 +336,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9534248E28F81878008E7DCE /* SplashScreen.swift in Sources */,
+				95999833290FABA200928A53 /* UIView+Extension.swift in Sources */,
 				95CBB09328F2EF1E00E58B34 /* NetworkManager.swift in Sources */,
 				95CBB09028F2D58C00E58B34 /* Model.swift in Sources */,
-				95CBB07728F2CAF300E58B34 /* ViewController.swift in Sources */,
-				9534249328F89E86008E7DCE /* ConvertModel.swift in Sources */,
-				95CA282A28F59B440066ADD7 /* CustomTableViewCell.swift in Sources */,
-				958B9D882900537200B42D7B /* UIimageViewExstenion.swift in Sources */,
+				9599983A290FC18500928A53 /* InfoCryptoRouter.swift in Sources */,
+				95CBB07728F2CAF300E58B34 /* CryptoTrackerView.swift in Sources */,
+				95CA282A28F59B440066ADD7 /* CryptoTrackerCell.swift in Sources */,
 				9534248C28F69CFE008E7DCE /* InfoCryptoViewController.swift in Sources */,
-				958B9D8A29008E6B00B42D7B /* APICaller.swift in Sources */,
+				95D09654290F9CCD002A8CFA /* Collection+Extension.swift in Sources */,
+				95999838290FC17A00928A53 /* InfoCryptoPresenter.swift in Sources */,
+				95E2CF4D290D2EE50048D2B5 /* CryptoTrackerRouter.swift in Sources */,
+				95E2CF4B290BB6A10048D2B5 /* CryptoTrackerPresenter.swift in Sources */,
 				95CBB07328F2CAF300E58B34 /* AppDelegate.swift in Sources */,
 				95CBB07528F2CAF300E58B34 /* SceneDelegate.swift in Sources */,
 			);
