@@ -67,7 +67,7 @@ final class DefaultCryptoTrackerView: UIViewController {
     }
 
     private func appearanceTableConfiguration() {
-        tableView.backgroundColor = UIColor(named: "CustomColor")
+        tableView.backgroundColor = CustomColor.customColor
     }
 
     private func behaviorTableConfiguration() {

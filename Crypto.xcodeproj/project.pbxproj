@@ -22,6 +22,8 @@
 		95D09654290F9CCD002A8CFA /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D09653290F9CCD002A8CFA /* Collection+Extension.swift */; };
 		95E2CF4B290BB6A10048D2B5 /* CryptoTrackerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E2CF4A290BB6A10048D2B5 /* CryptoTrackerPresenter.swift */; };
 		95E2CF4D290D2EE50048D2B5 /* CryptoTrackerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E2CF4C290D2EE50048D2B5 /* CryptoTrackerRouter.swift */; };
+		95E52D01291C1C2600AE0D44 /* ModelDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E52D00291C1C2600AE0D44 /* ModelDetail.swift */; };
+		95E52D04291C1CF000AE0D44 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E52D03291C1CF000AE0D44 /* CustomColor.swift */; };
 		DDC9D642F2CCB85BFF5E5625 /* Pods_Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB559470E9FD672E0842317 /* Pods_Crypto.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		95D09653290F9CCD002A8CFA /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		95E2CF4A290BB6A10048D2B5 /* CryptoTrackerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerPresenter.swift; sourceTree = "<group>"; };
 		95E2CF4C290D2EE50048D2B5 /* CryptoTrackerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoTrackerRouter.swift; sourceTree = "<group>"; };
+		95E52D00291C1C2600AE0D44 /* ModelDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelDetail.swift; sourceTree = "<group>"; };
+		95E52D03291C1CF000AE0D44 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		B883E80D55FA03EE1A33FD48 /* Pods-Crypto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto.release.xcconfig"; path = "Target Support Files/Pods-Crypto/Pods-Crypto.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,9 +84,10 @@
 		958B9D8228FF471E00B42D7B /* SecondView */ = {
 			isa = PBXGroup;
 			children = (
-				9534248B28F69CFE008E7DCE /* InfoCryptoViewController.swift */,
-				95999837290FC17A00928A53 /* InfoCryptoPresenter.swift */,
-				95999839290FC18500928A53 /* InfoCryptoRouter.swift */,
+				95E52CFD291C1C1400AE0D44 /* Model */,
+				95E52CFA291C1BB300AE0D44 /* View */,
+				95E52CFB291C1BB800AE0D44 /* Presenter */,
+				95E52CFC291C1BBD00AE0D44 /* Router */,
 			);
 			path = SecondView;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 		95CBB07128F2CAF300E58B34 /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				95E52D02291C1CDC00AE0D44 /* CustomColor */,
 				95999835290FABD300928A53 /* Helper */,
 				95999834290FABC800928A53 /* System */,
 				959D438B290DDAF8002FA448 /* NetworkLayer */,
@@ -220,6 +226,46 @@
 				95E2CF4C290D2EE50048D2B5 /* CryptoTrackerRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		95E52CFA291C1BB300AE0D44 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9534248B28F69CFE008E7DCE /* InfoCryptoViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		95E52CFB291C1BB800AE0D44 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				95999837290FC17A00928A53 /* InfoCryptoPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		95E52CFC291C1BBD00AE0D44 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				95999839290FC18500928A53 /* InfoCryptoRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		95E52CFD291C1C1400AE0D44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				95E52D00291C1C2600AE0D44 /* ModelDetail.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		95E52D02291C1CDC00AE0D44 /* CustomColor */ = {
+			isa = PBXGroup;
+			children = (
+				95E52D03291C1CF000AE0D44 /* CustomColor.swift */,
+			);
+			path = CustomColor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,9 +386,11 @@
 				95CBB09328F2EF1E00E58B34 /* NetworkManager.swift in Sources */,
 				95CBB09028F2D58C00E58B34 /* Model.swift in Sources */,
 				9599983A290FC18500928A53 /* InfoCryptoRouter.swift in Sources */,
+				95E52D01291C1C2600AE0D44 /* ModelDetail.swift in Sources */,
 				95CBB07728F2CAF300E58B34 /* CryptoTrackerView.swift in Sources */,
 				95CA282A28F59B440066ADD7 /* CryptoTrackerCell.swift in Sources */,
 				9534248C28F69CFE008E7DCE /* InfoCryptoViewController.swift in Sources */,
+				95E52D04291C1CF000AE0D44 /* CustomColor.swift in Sources */,
 				95D09654290F9CCD002A8CFA /* Collection+Extension.swift in Sources */,
 				95999838290FC17A00928A53 /* InfoCryptoPresenter.swift in Sources */,
 				95E2CF4D290D2EE50048D2B5 /* CryptoTrackerRouter.swift in Sources */,

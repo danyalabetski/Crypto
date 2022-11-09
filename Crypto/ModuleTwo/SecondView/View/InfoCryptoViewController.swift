@@ -35,7 +35,7 @@ final class DefaultInfoCryptoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor(named: "CustomColor")
+        view.backgroundColor = CustomColor.customColor
 
         behaviorUIElement()
         appearanceUIElement()
