@@ -72,7 +72,6 @@ final class CustomTableViewCell: UITableViewCell {
 
         let formattedPrice = course != nil ? String(format: "%.2f", course!) : "-"
         courseCryptoLabel.text = "$" + formattedPrice
-//        iconImageView.setImage(imageUrl: icons.url)
     }
 
     func appearanceLabel() {

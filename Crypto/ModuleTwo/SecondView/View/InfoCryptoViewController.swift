@@ -1,6 +1,10 @@
 import SnapKit
 import UIKit
 
+enum MagicColor {
+    static let magicColor = UIColor(red: 37 / 255, green: 35 / 255, blue: 51 / 255, alpha: 1.0)
+}
+
 protocol InfoCryptoViewControllerProtocol: AnyObject {
     func setActivityIndicator(activated: Bool)
     func updateView()
@@ -87,7 +91,7 @@ final class DefaultInfoCryptoViewController: UIViewController {
             $0.textAlignment = .center
             $0.layer.masksToBounds = true
             $0.layer.cornerRadius = 12
-            $0.backgroundColor = UIColor(red: 37 / 255, green: 35 / 255, blue: 51 / 255, alpha: 1.0)
+            $0.backgroundColor = MagicColor.magicColor
         }
 
         nameLabel.font = .systemFont(ofSize: 20, weight: .medium)
