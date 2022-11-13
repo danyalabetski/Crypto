@@ -10,9 +10,6 @@ Currency exchange rate tracking app
 UIKit
 ```
 ```sh
-NVActivityIndicatorView
-```
-```sh
 Alamofire
 ```
 ```sh
@@ -21,9 +18,7 @@ Cocoapods
 ```sh
 SnapKit
 ```
-```sh
-Kingfisher
-```
+
 ### __Installation__
 
 #### CocoaPods
